@@ -1,4 +1,3 @@
-# my-online-project
 # My Online Project
 
 Mijn website live op het internet met GitHub Pages!
