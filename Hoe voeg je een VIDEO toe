@@ -1,0 +1,75 @@
+## 📹 Hoe voeg je een VIDEO toe aan je HTML Website?
+
+### Methode 1: Lokale Video (HTML5 `<video>` tag)
+
+Dit gebruik je als je een **eigen videobestand** hebt (mp4 bestand).
+
+**Stap 1:** Download een videobestand en zet het in je `videos/` folder
+
+**Stap 2:** Schrijf deze code in je HTML:
+
+```html
+<div class="video-container">
+    <video width="560" height="315" controls>
+        <source src="videos/mijn-video.mp4" type="video/mp4">
+        Je browser ondersteunt geen video-afspelen.
+    </video>
+</div>
+```
+
+**Stap 3:** Uitleg:
+- `<video>` = container voor video
+- `width="560"` = breedte in pixels
+- `height="315"` = hoogte in pixels
+- `controls` = play/pause/volume knoppen
+- `src="..."` = pad naar het videobestand
+- `type="video/mp4"` = bestandstype
+
+### Methode 2: YouTube Video (`<iframe>` embed)
+
+Dit gebruik je voor **YouTube videos**.
+
+**Stap 1:** Ga naar YouTube en zoek je video
+
+**Stap 2:** Klik **DELEN** → **INSLUITEN** → kopieeer de code
+
+Je krijgt:
+```html
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/VIDEO_ID" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+```
+
+**Stap 3:** Plak in je HTML
+
+### Video ID vinden
+
+YouTube URL: `https://www.youtube.com/watch?v=kGW8Al_cga4`
+
+Video ID: `kGW8Al_cga4`
+
+Embed URL: `https://www.youtube.com/embed/kGW8Al_cga4`
+
+### Responsive Video (voor mobiel)
+
+CSS code:
+```css
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+```
